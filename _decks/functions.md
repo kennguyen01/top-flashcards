@@ -7,7 +7,7 @@ title: Functions
 
 2a. Defining function
 2b.
-```
+```js
 function random(parameter) {
   return value;
 }
@@ -15,7 +15,7 @@ function random(parameter) {
 
 3a. Invoking function
 3b.
-```
+```js
 function myFunc() {
   return value;
 }
@@ -25,7 +25,7 @@ myFunc();
 
 4a. Anonymous function
 4b.
-```
+```js
 // Function without a name, often used for event handler
 let myBtn = document.querySelector('button');
 
@@ -42,7 +42,7 @@ myBtn.onclick = function() {
 
 7a. Functions inside functions
 7b.
-```
+```js
 // Complex function can be broken down into smaller functions
 function bigFunc() {
   subFunc1();
@@ -56,7 +56,7 @@ function bigFunc() {
 
 9a. Default parameter
 9b.
-```
+```js
 // Named parameter can be initialized with default value if no value is passed
 function multiply(a, b = 1) {
   return a * b;
@@ -67,7 +67,7 @@ alert(multiply(5));   // 5
 
 10a. ?? (nullish coalescing operator)
 10b.
-```
+```js
 // An expression is defined when it's either null nor undefined
 function showCount(count) {
   alert(count ?? 'unknown');
@@ -79,7 +79,7 @@ showCount(null);    // 'unknown'
 
 11a. Empty return
 11a.
-```
+```js
 // If function does not return a value, it returns undefined
 function doNothing() {
   return;
@@ -90,7 +90,7 @@ alert(doNothing() === undefined);   // true
 
 12a. Function expression
 12b.
-```
+```js
 // Function can be defined and assigned to a variable explicitly
 let sayHi = function() {
   alert('Hello');
@@ -99,7 +99,7 @@ let sayHi = function() {
 
 13a. Callback function
 13b.
-```
+```js
 // Callback function is a function passed into another function as argument
 function greeting(name) {
   alert('Hello ' + name);
@@ -115,7 +115,7 @@ processUserInput(greeting);
 
 14a. Arrow function
 14b.
-```
+```js
 // Shortcut to regular function expression
 let sum = function(a, b) {
   return a + b;
