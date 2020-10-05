@@ -187,21 +187,37 @@ let result = arr.find(function(item, index, array) {
 20a. arr.filter()
 20b.
 ```js
-// Return new array with elements matching specific condition
+/* Return new array with elements matching specific condition
 
 let results = arr.filter(function(item, index, array) {
   // if true item is pushed to results and the iteration continues
   // Return empty array if nothing found
+}); 
+*/
+
+// Filter inventors who are born during the 1500s
+const fifteen = inventors.filter(inventor => {
+  if (inventor.year >= 1500 && inventor.year < 1600) {
+    return true;    // Keep the results
+  }
 });
+
+console.table(fifteen);   // Log data as a table
 ```
 
 21a. arr.map()
 21b.
 ```js
-// Call the function for each element and return the new array
+/* Call the function for each element and return the new array
 
 let result = arr.map(function(item, index, array) {
   // returns the new value instead of item
+});
+*/
+
+// Return array of inventors' first and last names
+const fullNames = inventors.map(inventor => {
+  return `${inventor.first} ${inventor.last}`;
 });
 ```
 
@@ -257,7 +273,51 @@ let value = arr.reduce(function(accumulator, item, index, array) {
 let arr = [1, 2, 3, 4, 5];
 
 // removed initial value from reduce (no 0)
-let result = arr.reduce((sum, current) => sum + current);
+let result = arr.reduce((sum, current) => sum + current);   // 15
 
-alert( result );    // 15
+// Calculate how many years the inventors live
+const totalYears = inventors.reduce((total, inventor) => {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+```
+
+27a. arr.some()
+27b.
+```js
+// Test if at least one element passes the provided test function.
+// Return boolean value
+const array = [1, 2, 3, 4, 5];
+
+// Check if an element is even
+const even = element => element % 2 === 0;    // true
+```
+
+28a. arr.every()
+28b.
+```js
+// Test if all elements pass the provided test function.
+// Return boolean value
+const array = [1, 30, 39, 29, 10, 13];
+const isBelowThreshold = currentValue => currentValue < 40;   // true
+```
+
+29a. arr.findIndex()
+29b.
+```js
+// Return the index of the first element satisfying provided test function.
+// Return 1 if not found
+const array = [5, 12, 8, 130, 44];
+const isLargeNumber = element => element > 13;    // 3
+```
+
+30a. ... (spread syntax)
+30b.
+```js
+// Allow an iterable (array or string) to be expanded where zero or more arguments are expected.
+function sum(x, y z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+sum(...numbers);    // 6
 ```
