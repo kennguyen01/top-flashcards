@@ -136,9 +136,8 @@ alert(arr)      // now ["Let's", "dance", "right", "now"]
 15a. arr.slice()
 15b.
 ```js
-/* arr.slice([start], [end])
-
-Return a new array from index start to end */
+// arr.slice([start], [end])
+// Return a new array from index start to end
 
 let arr = ["t", "e", "s", "t"];
 alert( arr.slice(1, 3) );     // ['e', 's'] (copy from 1 to 3)
@@ -148,9 +147,8 @@ alert( arr.slice(-2) );       // ['s', 't'] (copy from -2 till the end)
 16a. arr.concat()
 16b.
 ```js
-/* arr.concat(arg1, arg2...)
-
-Return a new array that includes values from other arrays and items */
+// arr.concat(arg1, arg2...)
+// Return a new array that includes values from other arrays and items
 
 let arr = [1, 2];
 console.log(arr.concat([3, 4], 5, 6));    // [1, 2, 3, 4, 5, 6]
@@ -210,7 +208,7 @@ let result = arr.map(function(item, index, array) {
 22a. arr.sort()
 22b.
 ```js
-// Sort the arra in place, changing the order of the elements.
+// Sort the array in place, changing the order of the elements.
 
 // Convert to string for comparison by default
 let arr = [ 1, 2, 15 ];
