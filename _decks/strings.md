@@ -1,5 +1,5 @@
 ---
-title: Strings and Conditionals
+title: Strings
 ---
 
 1a. String
@@ -161,70 +161,3 @@ let firstCode = saying.charCodeAt(0);   // 72
 let letters = 'a,b,c,d,e';
 let lettersArr = letters.split(',');    // [ 'a', 'b', 'c', 'd', 'e' ]
 ```
-
-21a. Comparison of different types
-21b.
-```js
-// JS converts values to numbers if they are different types
-alert('2' > 1);     // true
-alert(true == 1);   // true
-```
-
-22a. == (loose equality)
-22b.
-```js
-// Converts different types to a common one when comparing
-alert(0 == false);    // true
-```
-
-23a. === (strict equality)
-23b.
-```js
-// Consider operands of different types to be different
-alert(0 === false);   // false
-```
-
-24a. if...else statement
-24b.
-```js
-// Executes statement if condition is true
-// Otherwise another statement can be executed
-if (condition1) {
-  // Code block 1
-} else if (condition2) {
-  // Code block 2
-} else {
-  // Code block 3
-}
-```
-
-25a. || (OR)
-25b. Return true if any operand is true, false otherwise. In a chain of OR, it returns the first true value or the last value if none is found.
-
-26a. && (AND)
-26b. Return true if all operands are true, false otherwise. In a chain of AND, it returns the first false value or the last value if none is found.
-
-27a. ! (NOT)
-27b. Convert the operand to boolean type and return the inverse value.
-
-28a. Conditional operator
-28b.
-```js
-// Shortcut for the if statement
-let result = conditon ? value1 : value2;
-```
-
-29a. switch statement
-29b.
-```js
-// Evaluate an expression and matching value to a case
-switch (expression) {
-  case x:
-    // Code block x
-    break;
-  case y:
-    // Code block y
-    break;
-  default:
-    // Default code block
-}
