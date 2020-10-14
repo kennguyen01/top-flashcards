@@ -5,19 +5,29 @@
  * @return {Array} allCards
  */
 const processTerms = (termsArr) => {
+  // Array of term objects
   let allCards = [];
+
+  // Terms in array
+  let prev;
+  let current;
+  let next;
+
+  let card;         // Processed term object
+  let flag;         // Flag for skipping next term
+
   let i = 0;
   while (i < termsArr.length) {
-    let prev = termsArr[i - 1];
-    let current = termsArr[i];
-    let next = termsArr[i + 1];
+    prev = termsArr[i - 1];
+    current = termsArr[i];
+    next = termsArr[i + 1];
 
     if (current.tagName == 'DIV') {
-      let [card, flag] = processCodeTerms(prev, current, next);
+      [card, flag] = processCodeTerms(prev, current, next);
       allCards.push(card);
       flag ? i += 2 : i++;
     } else {
-      let card = processTextTerms(current);
+      card = processTextTerms(current);
       if (card) allCards.push(card);
       i++;
     }
@@ -31,11 +41,36 @@ const processTerms = (termsArr) => {
  * @param {HTMLElement} terms 
  */
 const processTextTerms = (text) => {
-  let terms = text.textContent.split('\n');
-  if (terms.length < 2) return;
 
-  let frontTerm = terms[0].substr(terms[0].indexOf('.') + 1);
-  let backTerm = terms[1].substr(terms[1].indexOf('.') + 1);
+  function getTerm(term) {
+    return term.substr(term.indexOf('.') + 1);
+  }
+
+  /* Add $$ to front and back of term
+  turns equation to displayed math */
+  function getMath(term) {
+    let math = term.substr(2, term.length - 4);
+    return `$$${math}$$`;
+  }
+
+  let terms = text.textContent.split('\n');
+
+  let frontTerm;
+  let backTerm;
+  if (terms.length < 2) {
+    return;
+  } else if (terms.length == 2) {   // Regular text term
+    frontTerm = getTerm(terms[0]);
+    backTerm = getTerm(terms[1]);
+  } else if (terms.length > 2) {    // Text term with math equations
+    if (terms[1].includes('\\')) {
+      frontTerm = getMath(terms[1]);
+      backTerm = getTerm(terms[2]);
+    } else {
+      frontTerm = getTerm(terms[0]);
+      backTerm = getMath(terms[2]);
+    }
+  }
 
   if (!frontTerm[1] || !backTerm[1]) return;
 
@@ -211,9 +246,11 @@ const addCardFunc = (cards) => {
 const cardsToObj = (flashcards) => {
   let obj = {};
 
+  let front;
+  let back;
   flashcards.forEach((card) => {
-    let front = card.firstChild.innerHTML;
-    let back = card.lastChild.innerHTML;
+    front = card.firstChild.innerHTML;
+    back = card.lastChild.innerHTML;
 
     obj[front] = back;
   });
