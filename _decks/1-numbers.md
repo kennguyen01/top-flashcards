@@ -1,5 +1,5 @@
 ---
-title: Numbers
+title: 1 - Numbers
 ---
 
 1a. Number
@@ -145,9 +145,3 @@ let message = 'hello';
 // Can be declared on one line
 let x = 1, b = 2, c = 3;
 ```
-
-20a. Naming variable
-20b. Variable names must contain only letters, digits, or symbols $ and _. The first character must not be a digit. The naming convention is camelCase.
-
-21a. Constant
-21b. Unchanging variable that cannot be reassigned. Often used as aliases for difficult to remember values before execution.

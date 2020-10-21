@@ -1,5 +1,5 @@
 ---
-title: Prototype
+title: 8 - Prototype
 ---
 
 1a. Define object
