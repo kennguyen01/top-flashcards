@@ -1,5 +1,5 @@
 ---
-title: 8 - Prototype
+title: 8 - Constructor
 ---
 
 1a. Define object
