@@ -1,4 +1,8 @@
 /**
+ * @module test
+ */
+
+/**
  * Clear storage and go back to previous page.
  * 
  * @param {HTMLElement} btn 
